@@ -2,15 +2,15 @@
 
 ## Description
 
-It is a beginner friendly Grocery list App built using ReactJS.
+It is a beginner friendly Grocery list App built using ReactJS.Blog Post for the same is available on [Blog link](https://dev.to/kritika27/beginners-friendly-grocery-list-app-in-reactjs-d7i)
 
 ## Demo
 
-Link 👉 To be added.
+👉 [Link](https://practical-torvalds-382e45.netlify.app/)
 
 ## Screenshot
 
-To be added.
+![screenshot](https://user-images.githubusercontent.com/4997491/99678169-8934b980-2aa0-11eb-9d2f-f5a6d573d35f.JPG)
 
 ## Installation
 
