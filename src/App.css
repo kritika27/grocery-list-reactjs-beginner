@@ -88,7 +88,7 @@ h1{
   border: none;  
 }
 
-input {
+.input {
   background-color: whitesmoke;
   color: black;
   padding: 1em 2em;
