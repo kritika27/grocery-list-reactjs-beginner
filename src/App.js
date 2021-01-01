@@ -20,7 +20,7 @@ function App() {
       complete: false,
     };
     e.preventDefault();
-    if (item) {
+    if (item && item.length <= 25) {
       setList([...list, newItem]);
       setItem("");
     }
@@ -38,7 +38,13 @@ function App() {
     <div className="App">
       <h1>Grocery List</h1>
       <form onSubmit={handleSubmit}>
-        <input type="text" value={item} onChange={handleChange} />
+        <input
+          className="input"
+          type="text"
+          value={item}
+          placeholder="Enter the items"
+          onChange={handleChange}
+        />
         <button className="btn" type="submit">
           Add Items
         </button>
@@ -50,7 +56,7 @@ function App() {
           <Item
             key={id}
             id={c.id}
-            items={c.item}
+            item={c.item}
             list={list}
             setList={setList}
             complete={c.complete}
