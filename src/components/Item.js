@@ -1,7 +1,7 @@
 import React from "react";
 import "./Item.css";
 
-const Item = ({ id, item, list, setList, complete }) => {
+const Item = ({ id, item, list,setEdit,setEditId, setItem, setList, complete }) => {
   const remove = (id) => {
     setList(list.filter((el) => el.id !== id));
   };
@@ -20,22 +20,13 @@ const Item = ({ id, item, list, setList, complete }) => {
     );
   };
 
-  const handleItem = (e) => {
-    if (e.target.value.length <= 25) {
-      setList(
-        list.map((el) => {
-          if (el.id === id) {
-            return {
-              ...el,
 
-              item: e.target.value,
-            };
-          }
-
-          return el;
-        })
-      );
-    }
+  //Edit Todo
+  const handleItem = (id) => {
+    const editItem=list.find(el=>el.id===id)
+    setItem(editItem.item);
+    setEdit(true);
+    setEditId(id);
   };
 
   return (
@@ -50,7 +41,7 @@ const Item = ({ id, item, list, setList, complete }) => {
           color: "white",
           fontSize: "20px",
         }}
-        onChange={handleItem}
+        
         className={complete ? "complete" : ""}
       />
       <img
@@ -58,6 +49,7 @@ const Item = ({ id, item, list, setList, complete }) => {
         src="https://img.icons8.com/offices/40/000000/checked-2--v2.png"
         alt="complete task"
       />
+      <button onClick={()=>handleItem(id)}>Edit</button>
       <img
         onClick={() => remove(id)}
         src="https://img.icons8.com/color/48/000000/trash.png"
