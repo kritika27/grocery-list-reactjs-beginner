@@ -6,11 +6,11 @@ It is a beginner friendly Grocery list App built using ReactJS.Blog Post for the
 
 ## Demo
 
-👉 [Link](https://practical-torvalds-382e45.netlify.app/)
+👉 [Link](https://ecstatic-torvalds-7d441f.netlify.app/)
 
 ## Screenshot
 
-![screenshot](https://user-images.githubusercontent.com/4997491/99678169-8934b980-2aa0-11eb-9d2f-f5a6d573d35f.JPG)
+![screenshot](https://user-images.githubusercontent.com/4997491/133280327-1ec44ebb-32ee-475b-abac-267541b955e3.JPG)
 
 ## Installation
 
