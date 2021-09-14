@@ -1,7 +1,16 @@
 import React from "react";
 import "./Item.css";
 
-const Item = ({ id, item, list,setEdit,setEditId, setItem, setList, complete }) => {
+const Item = ({
+  id,
+  item,
+  list,
+  setEdit,
+  setEditId,
+  setItem,
+  setList,
+  complete,
+}) => {
   const remove = (id) => {
     setList(list.filter((el) => el.id !== id));
   };
@@ -20,10 +29,9 @@ const Item = ({ id, item, list,setEdit,setEditId, setItem, setList, complete }) 
     );
   };
 
-
   //Edit Todo
   const handleItem = (id) => {
-    const editItem=list.find(el=>el.id===id)
+    const editItem = list.find((el) => el.id === id);
     setItem(editItem.item);
     setEdit(true);
     setEditId(id);
@@ -41,19 +49,26 @@ const Item = ({ id, item, list,setEdit,setEditId, setItem, setList, complete }) 
           color: "white",
           fontSize: "20px",
         }}
-        
         className={complete ? "complete" : ""}
       />
       <img
+        style={{ cursor: "pointer" }}
+        src="https://img.icons8.com/emoji/36/000000/pencil-emoji.png"
+        onClick={() => handleItem(id)}
+        alt="edit item"
+      />
+      <img
+        style={{ cursor: "pointer" }}
         onClick={() => handleComplete(id)}
         src="https://img.icons8.com/offices/40/000000/checked-2--v2.png"
-        alt="complete task"
+        alt="mark item complete"
       />
-      <button onClick={()=>handleItem(id)}>Edit</button>
+
       <img
+        style={{ cursor: "pointer" }}
         onClick={() => remove(id)}
         src="https://img.icons8.com/color/48/000000/trash.png"
-        alt="Delete"
+        alt="delete item"
       />
     </div>
   );
