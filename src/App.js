@@ -63,9 +63,15 @@ function App() {
           placeholder="Enter the items"
           onChange={handleChange}
         />
-        <button className="btn" type="submit">
-          Add Items
-        </button>
+        {edit ? (
+          <button className="btn" type="submit">
+            Edit Item
+          </button>
+        ) : (
+          <button className="btn" type="submit">
+            Add Item
+          </button>
+        )}
         {error && <p style={{ color: "red" }}>{error}</p>}
       </form>
       <div>

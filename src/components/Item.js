@@ -11,10 +11,12 @@ const Item = ({
   setList,
   complete,
 }) => {
+  //Delete Item
   const remove = (id) => {
     setList(list.filter((el) => el.id !== id));
   };
 
+  //Mark Item completed
   const handleComplete = (id) => {
     setList(
       list.map((item) => {
@@ -29,7 +31,7 @@ const Item = ({
     );
   };
 
-  //Edit Todo
+  //Edit Item
   const handleItem = (id) => {
     const editItem = list.find((el) => el.id === id);
     setItem(editItem.item);
@@ -54,7 +56,12 @@ const Item = ({
       <img
         style={{ cursor: "pointer" }}
         src="https://img.icons8.com/emoji/36/000000/pencil-emoji.png"
-        onClick={() => handleItem(id)}
+        onClick={() => {
+          const confirmBox = window.confirm("Do you want to edit this item?");
+          if (confirmBox === true) {
+            handleItem(id);
+          }
+        }}
         alt="edit item"
       />
       <img
@@ -66,7 +73,14 @@ const Item = ({
 
       <img
         style={{ cursor: "pointer" }}
-        onClick={() => remove(id)}
+        onClick={() => {
+          const confirmBox = window.confirm(
+            "Are you sure you want to delete this item?"
+          );
+          if (confirmBox === true) {
+            remove(id);
+          }
+        }}
         src="https://img.icons8.com/color/48/000000/trash.png"
         alt="delete item"
       />
